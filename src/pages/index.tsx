@@ -13,8 +13,6 @@ const Home: React.FC = () => {
 
   const generateLink = (): void => {
     const clearNumber = phone.replace(/([^\d])+/gim, '')
-    console.log(clearNumber)
-
     window.open(
       `${process.env.NEXT_PUBLIC_WHATSAPP_LINK}${clearNumber}`,
       '_blank'
