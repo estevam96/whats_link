@@ -13,7 +13,9 @@ import {
   EmojiPicker,
   EmojiBTN
 } from '../styles/pages/Home.page'
-import 'emoji-mart/css/emoji-mart.css'
+type NativeEmoji = EmojiData & {
+  native?: string
+}
 
 const Home: React.FC = () => {
   const [phone, setPhone] = useState('')
@@ -29,9 +31,7 @@ const Home: React.FC = () => {
     )
   }
 
-  const handleEmoji = (emoji: EmojiData) => {
-    console.log(typeof emoji.native);
-
+  const handleEmoji = (emoji: NativeEmoji) => {
     setText(text.concat(emoji.native))
   }
 
