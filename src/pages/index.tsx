@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
-import { Emoji, EmojiData } from 'emoji-mart'
+import { EmojiData } from 'emoji-mart'
 import Head from 'next/head'
+import 'emoji-mart/css/emoji-mart.css'
 import {
   Button,
   Container,
@@ -13,6 +14,8 @@ import {
   EmojiPicker,
   EmojiBTN
 } from '../styles/pages/Home.page'
+import translate from '../i18n/emojiPicker'
+
 type NativeEmoji = EmojiData & {
   native?: string
 }
@@ -80,6 +83,7 @@ const Home: React.FC = () => {
           <EmojiPicker
             title="Pick your emoji…"
             emoji="point_up"
+            i18n={translate}
             showPreview={false}
             emojiTooltip={false}
             showSkinTones={false}
